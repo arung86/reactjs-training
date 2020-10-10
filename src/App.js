@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+// import logo from "./logo.svg";
+import "./App.css";
+import NumberDescriber from "./OddEven";
+import MyComponent from "./Message";
+import EventHandling from "./EventHandling";
+
+function test() {
+  console.log("test");
+}
+
+// props -
+// state - setState({})
+//
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <NumberDescriber number={100} /> */}
+      {/* <NumberDescriber number={101} /> */}
+      {/* <MyComponent message="<3>" /> */}
+      {/* <MyComponent message={"<3"} /> */}
+      <EventHandling />
     </div>
   );
+
+  /* return (
+    <div className="App">
+      <h1>Hello World!</h1>
+    </div>
+  );*/
+  /* const H1 = React.createElement("h1", {}, "Hello World!");
+  return React.createElement("div", { className: "App" }, H1);*/
 }
 
 export default App;
