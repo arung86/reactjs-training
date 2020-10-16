@@ -8,9 +8,13 @@ const header = {
 };
 
 function App() {
+  function formSubmitted(form) {
+    console.log("form submitted", form);
+  }
+
   return (
     <div className="App">
-      <FormExample />
+      <FormExample submitHandler={formSubmitted} />
     </div>
   );
 }
