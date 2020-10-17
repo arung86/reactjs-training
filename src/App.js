@@ -2,7 +2,13 @@ import React from "react";
 //import logo from "./logo.svg";
 import "./App.css";
 
-import { ApolloClient, InMemoryCache, gql, useQuery } from "@apollo/client";
+import {
+  ApolloClient,
+  InMemoryCache,
+  gql,
+  useQuery,
+  useMutation,
+} from "@apollo/client";
 import { ApolloProvider } from "@apollo/client";
 
 const client = new ApolloClient({
@@ -18,6 +24,30 @@ const GET_ROLES = gql`
     }
   }
 `;
+
+const DO_LOGIN = gql`
+  mutation DoLogin($username: String!, $password: String!) {
+    login(data: { username: $username, password: $password }) {
+      token
+    }
+  }
+`;
+
+function DoLogin() {
+  const [login, { data }] = useMutation(DO_LOGIN);
+
+  return (
+    <div>
+      <button
+        onClick={(e) =>
+          login({ variables: { username: "test1", password: "test1" } })
+        }
+      >
+        Login
+      </button>
+    </div>
+  );
+}
 
 function Roles() {
   const { loading, error, data } = useQuery(GET_ROLES);
@@ -39,7 +69,8 @@ function App() {
     <ApolloProvider client={client}>
       <div>
         <h2>My first Apollo app 🚀</h2>
-        <Roles />
+        {/* <Roles /> */}
+        <DoLogin />
       </div>
     </ApolloProvider>
   );
