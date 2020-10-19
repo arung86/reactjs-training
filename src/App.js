@@ -1,22 +1,29 @@
-import React, { useState } from "react";
+import React, { PureComponent, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 // import LifecycleMethods from "./LifecycleMethods";
-import ComponentUpdate from "./ComponentUpdate";
+import ChildComponent from "./ComponentUpdate";
+import PureChildComp from "./PureChildComp";
+import FChildComp from "./FChildComp";
+import RefInput from "./RefInput";
 
 function App() {
   const [show, setShow] = useState(true);
   return (
     <div className="App">
-      {/* <LifecycleMethods /> */}
-      show: {show ? "true" : "false"}
       {/* {show ? <ComponentUpdate /> : null} */}
-      <ComponentUpdate />
+      {/* <LifecycleMethods />
+      show: {show ? "true" : "false"}
+      
+      <ChildComponent />
+      <PureChildComp show={show} />
+      <FChildComp />
       <input
         type="button"
         onClick={() => setShow((prevShow) => !prevShow)}
         value="Show/Hide"
-      />
+      /> */}
+      <RefInput />
     </div>
   );
 }

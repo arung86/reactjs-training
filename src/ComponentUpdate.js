@@ -24,12 +24,12 @@ export class ComponentUpdate extends Component {
   }
 
   componentDidUpdate() {
-    console.log("in did update");
+    // console.log("in did update");
     document.title = `counter clicked ${this.state.counter} times`;
   }
 
   componentDidMount() {
-    console.log("in didmount");
+    // console.log("in didmount");
     document.title = `counter clicked ${this.state.counter} times`;
   }
   componentWillUnmount() {
@@ -46,6 +46,7 @@ export class ComponentUpdate extends Component {
         <input
           type="text"
           value={this.state.name}
+          autofocus
           onChange={(ev) => this.setState({ name: ev.target.value })}
         />
         <br />
