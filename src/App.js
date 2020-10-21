@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Counter from "./Counter";
+import MouseOver from "./MouseOver";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Counter name="Click" />
+      <MouseOver name="Mouse" />
     </div>
   );
 }
+/*
+function App() {
+  const [counter1, setCounter1] = useState(0);
+  const [counter2, setCounter2] = useState(0);
 
+  const increment = () => {
+     setCounter1((prevCount) => prevCount + 1);
+     setCounter2((prevCount) => prevCount + 1);
+  };
+
+  return (
+    <div className="App">
+      <Counter counter={counter1} increment={increment} />
+      <MouseOver counter={counter2} increment={increment}  />
+      
+    </div>
+  );
+}
+*/
 export default App;
+
+//export default React.memo(FChild)
+
+// Higher order functions
