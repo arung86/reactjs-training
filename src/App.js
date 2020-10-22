@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import ClickCounter from "./ClickCounter";
+import MouseOverCounter from "./MouseOverCounter";
+import User from "./User";
+import Counter from "./Counter";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <ClickCounter /> */}
+      {/* <MouseOverCounter /> */}
+      <User render={(msg) => <h3>{msg + "React"}</h3>} />
+
+      <Counter
+        render={(count, increment) => (
+          <ClickCounter count={count} increment={increment} />
+        )}
+      />
+
+      <Counter
+        render={(count, increment) => (
+          <MouseOverCounter count={count} increment={increment} />
+        )}
+      />
     </div>
   );
 }
 
+// render prop
+//
 export default App;
