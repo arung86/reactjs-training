@@ -11,9 +11,12 @@ function App() {
     <div className="App">
       {/* <ClickCounter /> */}
       {/* <MouseOverCounter /> */}
-      <User render={(msg) => <h3>{msg + "React"}</h3>} />
+      <User render={(msg) => <h3>{msg + "React"}</h3>}>
+        <h3>its child h3</h3>
+        <h4> this h4</h4>
+      </User>
 
-      <Counter
+      {/* <Counter
         render={(count, increment) => (
           <ClickCounter count={count} increment={increment} />
         )}
@@ -23,7 +26,16 @@ function App() {
         render={(count, increment) => (
           <MouseOverCounter count={count} increment={increment} />
         )}
-      />
+      /> */}
+      {/* <Counter>
+        <h3>its child h3</h3>
+      </Counter> */}
+
+      <Counter>
+        {(count, increment) => (
+          <ClickCounter count={count} increment={increment} />
+        )}
+      </Counter>
     </div>
   );
 }
