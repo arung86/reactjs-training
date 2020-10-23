@@ -5,16 +5,17 @@ import ClickCounter from "./ClickCounter";
 import MouseOverCounter from "./MouseOverCounter";
 import User from "./User";
 import Counter from "./Counter";
+import Welcome from "./Welcome";
 
 function App() {
   return (
     <div className="App">
       {/* <ClickCounter /> */}
       {/* <MouseOverCounter /> */}
-      <User render={(msg) => <h3>{msg + "React"}</h3>}>
+      {/* <User render={(msg) => <h3>{msg + "React"}</h3>}>
         <h3>its child h3</h3>
         <h4> this h4</h4>
-      </User>
+      </User> */}
 
       {/* <Counter
         render={(count, increment) => (
@@ -31,11 +32,14 @@ function App() {
         <h3>its child h3</h3>
       </Counter> */}
 
-      <Counter>
+      {/* <Counter>
         {(count, increment) => (
           <ClickCounter count={count} increment={increment} />
         )}
-      </Counter>
+      </Counter> */}
+      {/* <Welcome user="Praveen" /> */}
+      {/* <Welcome render={(user) => user + ", Praveen"} /> */}
+      <Welcome>{(user) => user + ", Praveen"}</Welcome>
     </div>
   );
 }
