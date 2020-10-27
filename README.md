@@ -1,5 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Description  
+
+This repository contain work samples of React learning path along with Redux. People can change branch to know what topic is covered in that respective branch. The project files will have contain various kinds of examples based on React [docs](https://reactjs.org/docs/getting-started.html).  The project files will be having running code and also few commented codes. Commented codes will have other examples of the same topic or different versions/logic of the same functionality. The branch Readme file will contain information regarding the topic covered in particular branch.
+
+## How to run?  
+
+#### `git clone https://github.com/arung86/reactjs-training.git`   
+#### `cd ./reactjs-training`    
+#### `yarn start`     
+
 ## Available Scripts
 
 In the project directory, you can run:
