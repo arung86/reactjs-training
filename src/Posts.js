@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import PostForm from "./PostForm";
 
 class Posts extends Component {
   constructor(props) {
@@ -11,11 +12,10 @@ class Posts extends Component {
   }
 
   // POST
-
   componentDidMount() {
     // REST
     axios
-      .get("https://jsonplaceholder.typicode.com/posts/1")
+      .get("https://jsonplaceholder.typicode.com/posts/")
       .then((response) => {
         console.log(response);
         this.setState({ posts: response.data });
@@ -29,15 +29,16 @@ class Posts extends Component {
     const { posts } = this.state;
     return (
       <div>
+        <PostForm />
         Here are the list of posts
-        {JSON.stringify(posts)};
-        {/* <ul>
+        {/* {JSON.stringify(posts)}; */}
+        { <ul>
           {posts.map((post) => (
             <li>
               {post.id},{post.title}
             </li>
           ))}
-        </ul> */}
+        </ul> }
       </div>
     );
   }
