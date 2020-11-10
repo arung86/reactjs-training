@@ -12,6 +12,8 @@ export default class Form extends Component {
       fruit: "",
       agreed: false,
       areYouSure: false,
+      errMsg: "",
+      age: "",
     }; // setState
     // this.handleNameChange = this.handleNameChange.bind(this);
     // this.handleBioChange = this.handleBioChange.bind(this);
@@ -59,8 +61,17 @@ export default class Form extends Component {
 
   handleSubmit = (event) => {
     // console.log("name", this.state.name);
-    this.props.submitHandler(this.state);
     event.preventDefault();
+    this.props.submitHandler(this.state);
+    this.setState({
+      firstName: "",
+      bio: "",
+      fruit: "",
+      agreed: false,
+      areYouSure: false,
+      errMsg: "",
+      age: "",
+    });
   };
 
   componentDidMount() {
@@ -86,6 +97,9 @@ export default class Form extends Component {
     return (
       <div>
         {this.state.bio}
+        {this.state.errMsg && (
+          <p style={{ color: "red" }}>{this.state.errMsg}</p>
+        )}
         <form onSubmit={this.handleSubmit}>
           <div>
             <label>

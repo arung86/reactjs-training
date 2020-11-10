@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import FormExample from "./Form";
 import "./App.css";
+import FormikForm from "./FormikForm";
 
 const header = {
   fontSize: "32px",
@@ -14,7 +15,8 @@ function App() {
 
   return (
     <div className="App">
-      <FormExample submitHandler={formSubmitted} />
+      {/* <FormExample submitHandler={formSubmitted} /> */}
+      <FormikForm submitHandler={formSubmitted} />
     </div>
   );
 }
