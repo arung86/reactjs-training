@@ -9,7 +9,7 @@ const reducer = (state = initialState, action) => {
     case FETCH_USERS:
       return {
         ...state,
-        users: [...state.users, { name: "React", age: 10 }],
+        users: [...state.users, ...action.payload],
       };
 
     default:

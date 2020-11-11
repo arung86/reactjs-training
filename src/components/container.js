@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
+import { fetchUsers, fetchUsersAsync } from "../redux/actionCreator";
 import User from "./User";
-
 const mapStateToProps = (state) => {
   return {
     users: state.users,
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchUsers: () => {
-      dispatch({ type: "FETCH_USERS" });
+      dispatch(fetchUsersAsync());
     },
   };
 };
