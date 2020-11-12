@@ -1,31 +1,15 @@
 import React, { Component } from "react";
-
+import Table from "./Table";
 export class User extends Component {
+  componentDidMount() {
+    this.props.fetchUsers();
+  }
   render() {
     return (
       <div>
         <div>List of users</div>
-        {this.props.users.length > 0 && (
-          <table>
-            <thead>
-              <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Username</th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.props.users.map(({ id, name, username }, index) => (
-                <tr key={index}>
-                  <td>{id}</td>
-                  <td>{name}</td>
-                  <td>{username}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-        <button onClick={this.props.fetchUsers}>Fetch Users</button>
+        <Table users={this.props.users} />
+        {/* <button onClick={this.props.fetchUsers}>Fetch Users</button> */}
       </div>
     );
   }
