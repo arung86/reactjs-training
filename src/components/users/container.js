@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
-import { fetchUsers, fetchUsersAsync } from "../redux/actionCreator";
-import User from "./User";
+import { fetchUsers, fetchUsersAsync } from "../../redux/actionCreator";
+import User from ".";
 const mapStateToProps = (state) => {
   return {
-    users: state.users,
+    users: state.user.users,
   };
 };
 
