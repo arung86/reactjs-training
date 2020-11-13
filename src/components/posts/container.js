@@ -5,6 +5,8 @@ import { fetchPosts } from "../../redux/posts/actions";
 const mapStateToProps = (state) => {
   return {
     posts: state.post.posts,
+    loading: state.post.loading,
+    error: state.post.error,
   };
 };
 

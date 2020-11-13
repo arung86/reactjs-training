@@ -1,17 +1,30 @@
 import Axios from "axios";
+import * as types from "./actionTypes";
+// action creators
+const fetchPostRequest = () => {
+  return { type: types.FETCH_POST_REQUEST, loading: true };
+};
 
-const FETCH_POSTS = "FETCH_POSTS";
-const FETCH_POST_REQUEST = "FETCH_POST_REQUEST";
-const FETCH_POST_FAIL = "FETCH_POST_FAIL";
+const fetchPostSuccess = (payload) => {
+  return { type: types.FETCH_POST_SUCCESS, loading: false, payload };
+};
 
+const fetchPostFail = (err) => {
+  return { type: types.FETCH_POST_FAIL, loading: false, payload: err };
+};
+
+// async action creator
 const fetchPosts = () => {
   return function (dispatch) {
+    dispatch(fetchPostRequest());
     Axios.get("https://jsonplaceholder.typicode.com/posts")
       .then((response) => {
-        dispatch({ type: FETCH_POSTS, payload: response.data });
+        dispatch(fetchPostSuccess(response.data));
       })
-      .catch(() => {});
+      .catch((err) => {
+        dispatch(fetchPostFail(err));
+      });
   };
 };
 
-export { fetchPosts, FETCH_POSTS };
+export { fetchPosts };

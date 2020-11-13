@@ -7,7 +7,9 @@ export default function Posts(props) {
   }, []);
   return (
     <div>
-      <List list={props.posts} />
+      {props.loading && <div>Loading... Please wait!</div>}
+      {props.posts.length > 0 && <List list={props.posts} />}
+      {props.error && <div> Problem loading data! </div>}
     </div>
   );
 }
